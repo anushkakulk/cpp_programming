@@ -3,7 +3,7 @@ using namespace std;
 
 int main(void)
 {
-    // prints out "anushka" using characters
+    // prints out "anushka" using ascii characters
     cout << "                          _     _           " << endl;
     cout << "   __ _ _ __  _   _  ___ | |__ | | __ __ _  " << endl;
     cout << "  / _` | `_ \\| | | |/ __|| '_ \\| |/ // _` | " << endl;
