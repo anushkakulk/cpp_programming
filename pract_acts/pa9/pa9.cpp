@@ -25,6 +25,7 @@ int main()
         }
     }
 
+    // ensuring items, stores, prices maps up correctly
     vector<string> my_items;
     vector<string> my_stores;
 
@@ -47,6 +48,8 @@ int main()
 
     items = my_items;
     stores = my_stores;
+
+
     // printing out the grid of stores x items
     cout << "Name:       ";
     for (int i = 0; i < stores.size(); i++)
@@ -91,6 +94,7 @@ int main()
     }
     cout << endl;
 
+    // best price calc
     for (const auto &item : items)
     {
         string best_store;
