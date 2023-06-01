@@ -94,7 +94,7 @@ int main()
     for (const auto &item : items)
     {
         string best_store;
-        double best_price = numeric_limits<double>::max();
+        double best_price = 1552; // a num bigger than 1550
 
         for_each(stores.begin(), stores.end(), [&](const string &store)
                  {
