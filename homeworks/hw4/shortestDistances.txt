@@ -1,0 +1,8 @@
+shortest distances from Pendleton:
+- Pierre 2
+- Phoenix 4
+- Pueblo 5
+- Pensacola 9
+- Pittsburgh 13
+- Princeton 15
+- Peoria 18
