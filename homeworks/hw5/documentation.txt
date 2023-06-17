@@ -1,0 +1,28 @@
+    ANUSHKA KULKARNI CS3520 DOODLEBUG/ANT SIMULATOR
+
+    DOCUMENTATION
+
+    OBJECT ORIENTED DESIGN 
+    The base class is Critter which holds a pair<int, int representing (x,y) coord on the board, a char representing
+    the critter's type, and int representing timesteps gone hungry.
+
+    Critter contains the basis for its derived classes and contains the main virtual methods: move, process, breed, along
+    with static functions that are used by all Critters regardless of type during the sim
+
+    Ants and DoodleBugs are derived from Critter as they use many common Critter methods, yet they move, breed, and process each time step differently, so those
+    methods are overriden. QueenAnts, WorkerAnts, and MaleAnts are derived from the Ant class, as they share common features. However,
+    the Queen class overrides many of the Ant methods since the Queen acts differently from WorkerAnts and MaleAnts. 
+
+    All functionality (except for static Critter methods) are handled using dynamic dispatch to type check the critter and use the appropriate
+    methods
+
+    Rather than a grid class, critters are defined w/ coordinates and location is found using posn manipulation. I decided to use posns represented by pair<int, int>, equivalent
+    to an (x, y) position. Critters are identified by looping through posns to see if the type at a coord is of a certain critter type. 
+    The simulation is run similarly to how assignmetn 3 (snake game) was run, with the sim_window and simulation.cpp mirroring
+    game_window and game.cpp in the snake_game, and critters sharing functionality (remove_eaten, exists, render, etc) with food in snake_game.
+    Used a list of Critters instead of the CritterList *critter_list to make sure I could easily insert dbs in the front since 
+    the list of critters is processed in order (makes sure doodlebugs move before ants)
+    
+    ++ is overriden in the queenant and db classes to increment type specific vars
+
+    
