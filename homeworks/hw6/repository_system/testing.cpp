@@ -1,3 +1,10 @@
+/*
+Anushka Kulkarni
+6/18/23
+Testing file that makes repositories of strings, doubles, Books, and Courses
+and manipulates them.
+*/
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -9,7 +16,6 @@ using namespace std;
 
 int main()
 {
-
     // ------- GENERIC TYPE TESTING 1 - STRING ------- //
     vector<string> names = {"alice", "bob", "carol", "dana", "edgar", "frank"};
 
