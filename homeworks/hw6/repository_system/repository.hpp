@@ -1,7 +1,7 @@
 #include <map>
 #include <iostream>
 #include <vector>
-#include <algorithm> 
+#include <algorithm>
 
 using namespace std;
 
@@ -12,10 +12,11 @@ public:
     map<int, T> items;
 
 public:
-    Repository() {}; // default
+    Repository(){}; // default
     Repository(vector<T> &init_items)
     {
-       for (const T& item : init_items) {
+        for (const T &item : init_items)
+        {
             items[items.size()] = item;
         }
     }
@@ -37,27 +38,26 @@ public:
     }
 
     // move assignment operator
-Repository& operator=(Repository&& other)
-{
-    cout << "Move assignment operator" << endl;
-    if (this != &other)
+    Repository &operator=(Repository &&other)
     {
-        items = move(other.items);
+        cout << "Move assignment operator" << endl;
+        if (this != &other)
+        {
+            items = move(other.items);
+        }
+        return *this;
     }
-    return *this;
-}
 
-// copy assignment operator
-Repository& operator=(const Repository& other)
-{
-    cout << "Copy assignment operator" << endl;
-    if (this != &other)
+    // copy assignment operator
+    Repository &operator=(const Repository &other)
     {
-        items = other.items;
+        cout << "Copy assignment operator" << endl;
+        if (this != &other)
+        {
+            items = other.items;
+        }
+        return *this;
     }
-    return *this;
-}
-
 
     // destructor
     ~Repository()
@@ -80,19 +80,19 @@ Repository& operator=(const Repository& other)
     }
 
     // adds an item to the repo
-    void add(const T& item)
-{
-    int index = findIndex(item);
-    if (index == -1)
+    void add(const T &item)
     {
-        items.insert(pair<int, T>(size(), item));
-        cout << "Added item " << item << " at id " << size() << endl;
+        int index = findIndex(item);
+        if (index == -1)
+        {
+            items.insert(pair<int, T>(size(), item));
+            cout << "Added item " << item << " at id " << size() << endl;
+        }
+        else
+        {
+            cout << "Item " << item << " already exists at id " << index << endl;
+        }
     }
-    else
-    {
-        cout << "Item " << item << " already exists at id " << index << endl;
-    }
-}
 
     // addss a vector of items to the repo
     void addItems(const vector<T> &to_add)
@@ -106,27 +106,26 @@ Repository& operator=(const Repository& other)
     }
 
     // removed the given item to the repo
-    void remove(const T& item)
-{
-    auto it = find_if(items.begin(), items.end(), [&](const pair<int, T>& element) {
-        return element.second == item;
-    });
+    void remove(const T &item)
+    {
+        auto it = find_if(items.begin(), items.end(), [&](const pair<int, T> &element)
+                          { return element.second == item; });
 
-    if (it != items.end())
-    {
-        cout << "Removed item " << item << " at id " << it->first << endl;
-        items.erase(it);
+        if (it != items.end())
+        {
+            cout << "Removed item " << item << " at id " << it->first << endl;
+            items.erase(it);
+        }
+        else
+        {
+            cout << "Item " << item << " does not exist in the repository" << endl;
+        }
     }
-    else
-    {
-        cout << "Item " << item << " does not exist in the repository" << endl;
-    }
-}
 
     // removes the given vector of items to the repo
     void removeItems(vector<T> &to_remove)
     {
-       for (const T& item : to_remove)
+        for (const T &item : to_remove)
         {
             remove(item);
         }
@@ -137,13 +136,16 @@ Repository& operator=(const Repository& other)
     // returns repo size
     int size()
     {
-      if (items.empty()) {
-        return 0;
-    } else {
-        return items.rbegin()->first + 1;
+        if (items.empty())
+        {
+            return 0;
+        }
+        else
+        {
+            return items.rbegin()->first + 1;
+        }
     }
-    }
-    
+
     // prints out repo items
     void displayItems()
     {
