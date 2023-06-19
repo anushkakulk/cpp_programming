@@ -10,7 +10,6 @@ private:
     string course_name;
     string prof;
 
-
 public:
     Course(){};
 

@@ -7,12 +7,12 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
-// ------- GENERIC TYPE TESTING 1 - STRING ------- //
+    // ------- GENERIC TYPE TESTING 1 - STRING ------- //
     vector<string> names = {"alice", "bob", "carol", "dana", "edgar", "frank"};
 
-    
     Repository<string> names_repo(names); // normal constructor
     cout << "Items in names_repo: " << endl;
     names_repo.displayItems();
@@ -62,7 +62,6 @@ int main() {
     // adding llist of existing names
     vector<string> same_names = {"carol", "dana", "edgar"};
     test_names.addItems(same_names);
-    
 
     cout << "removing a item from reop " << endl;
     // removing new names
@@ -79,13 +78,9 @@ int main() {
     // removing llist of existing names
     test_names.removeItems(same_names);
 
-
-
-
-// ------- GENERIC TYPE TESTING 2 - DOUBLE ------- //
+    // ------- GENERIC TYPE TESTING 2 - DOUBLE ------- //
     vector<double> nums = {0.1, 2.02, 100.9, 42.3, 63.8887, 999.99};
 
-    
     Repository<double> double_repo(nums); // normal constructor
     cout << "Items in double_repo: " << endl;
     double_repo.displayItems();
@@ -135,7 +130,6 @@ int main() {
     // adding llist of existing double
     vector<double> same_double = {100.9, 42.3, 63.8887};
     test_double.addItems(same_double);
-    
 
     cout << "removing a item from reop " << endl;
     // removing new double
@@ -152,20 +146,16 @@ int main() {
     // removing llist of existing double
     test_double.removeItems(same_double);
 
-
-
-
-// ------- CUSTOM TYPE TESTING 3 - BOOK CLASS ------- //
-    Book a ("Cat in The Hat", "Dr Seuss", 1960);
-    Book b ("Green Eggs and Ham", "Dr Seuss", 1961);
-    Book c ("Harry Potter 1", "JK Rowling", 1970);
-    Book d ("Harry Potter 2", "JK Rowling", 1971);
-    Book e ("Harry Potter 3", "JK Rowling", 1972);
-    Book f ("Harry Potter 4", "JK Rowling", 1973);
-    Book g ("Harry Potter 5" , "JK Rowling", 1974);
-    Book h ("Harry Potter 6", "JK Rowling", 1975);
-    Book i ("Harry Potter 7", "JK Rowling", 1976);
- 
+    // ------- CUSTOM TYPE TESTING 3 - BOOK CLASS ------- //
+    Book a("Cat in The Hat", "Dr Seuss", 1960);
+    Book b("Green Eggs and Ham", "Dr Seuss", 1961);
+    Book c("Harry Potter 1", "JK Rowling", 1970);
+    Book d("Harry Potter 2", "JK Rowling", 1971);
+    Book e("Harry Potter 3", "JK Rowling", 1972);
+    Book f("Harry Potter 4", "JK Rowling", 1973);
+    Book g("Harry Potter 5", "JK Rowling", 1974);
+    Book h("Harry Potter 6", "JK Rowling", 1975);
+    Book i("Harry Potter 7", "JK Rowling", 1976);
 
     vector<Book> books = {a, b, c};
 
@@ -232,18 +222,16 @@ int main() {
     // removing llist of existing books
     test_books.removeItems(same_books);
 
-
-// ------- CUSTOM TYPE TESTING 4 - COURSE CLASS ------- //
-    Course c_a ("CS2500", "Arjun Guha");
+    // ------- CUSTOM TYPE TESTING 4 - COURSE CLASS ------- //
+    Course c_a("CS2500", "Arjun Guha");
     Course c_b("CS2510", "Ben Lerner");
     Course c_c("CS3520", "Adeel Bhutta");
-    Course c_d ("MATH1365", "Marco Rainho");
-    Course c_e ("Discrete", "Laney Strange");
-    Course c_f ("OOD", "Vido");
-    Course c_g ("PHIL1145" , "John Basl");
-    Course c_h ("MATH101", "Marco Rainho");
-    Course c_i ("Compilers", "Ben Lear er");
- 
+    Course c_d("MATH1365", "Marco Rainho");
+    Course c_e("Discrete", "Laney Strange");
+    Course c_f("OOD", "Vido");
+    Course c_g("PHIL1145", "John Basl");
+    Course c_h("MATH101", "Marco Rainho");
+    Course c_i("Compilers", "Ben Lear er");
 
     vector<Course> courses = {c_a, c_b, c_c};
 
@@ -309,5 +297,4 @@ int main() {
     test_courses.removeItems(new_courses);
     // removing llist of existing courses
     test_courses.removeItems(same_courses);
-
 }
