@@ -1,0 +1,12 @@
+Design - Food Delivery System
+
+The system for food delivery would need Restaurants and Customers. Customers and Restaurants interact 
+through Orders and Deliveries, which both involve data such as FoodItems and the addresses of the 
+respective customer/restaurant. FoodItem is another class that has data regarding name and price and can be
+created by Restaurant and put on the Menu. Menu is a class that handles all FoodItems of a restaurant. 
+Instances of FoodItem is also held in UserAccount, which represents the account of a Customer and stores that customer's 
+favorite food and payment information. In addition, there is a Cart which the User can add FoodItems to. When the User 
+places an Order, that cart is transformed into an Order. An Order contains the Cart, the customer placing the order, 
+and the Restaurant. The Restaurant can then confirm the order. If they confirm, then the Restaurant makes a Delivery, 
+which has a status in addition to the origin and destination addresses. From there, the User can track the status of 
+their food delivery. 
