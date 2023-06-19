@@ -9,7 +9,7 @@ using namespace std;
 
 int main() {
 
-// GENERIC TESTING 1 - STRING
+// ------- GENERIC TYPE TESTING 1 - STRING ------- //
     vector<string> names = {"alice", "bob", "carol", "dana", "edgar", "frank"};
 
     
@@ -82,7 +82,7 @@ int main() {
 
 
 
-// GENERIC TESTING 1 - double
+// ------- GENERIC TYPE TESTING 2 - DOUBLE ------- //
     vector<double> nums = {0.1, 2.02, 100.9, 42.3, 63.8887, 999.99};
 
     
@@ -155,7 +155,7 @@ int main() {
 
 
 
- // GENERIC TESTING 1 - Book
+// ------- CUSTOM TYPE TESTING 3 - BOOK CLASS ------- //
     Book a ("Cat in The Hat", "Dr Seuss", 1960);
     Book b ("Green Eggs and Ham", "Dr Seuss", 1961);
     Book c ("Harry Potter 1", "JK Rowling", 1970);
@@ -233,7 +233,7 @@ int main() {
     test_books.removeItems(same_books);
 
 
- // GENERIC TESTING 1 - course
+// ------- CUSTOM TYPE TESTING 4 - COURSE CLASS ------- //
     Course c_a ("CS2500", "Arjun Guha");
     Course c_b("CS2510", "Ben Lerner");
     Course c_c("CS3520", "Adeel Bhutta");
