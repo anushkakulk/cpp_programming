@@ -8,9 +8,7 @@
 // Name: Hyundai model Year: 2020 Mileage: 23
 // Name: Ford model Year: 2012 Miles driven: 20000
 // Name: Ford model Year: 2017 Miles driven: 10000
-
 #include <iostream>
-
 using namespace std;
 
 class car
@@ -18,13 +16,13 @@ class car
 private:
     string name;
     int modelYear;
-    
 
 public:
     car(const string &n, const int my) : name(n), modelYear(my) {}
 
-    string get_name() const { return name;}
-    int get_year() const { return modelYear;}
+    string get_name() const { return name; }
+    int get_year() const { return modelYear; }
+
     virtual void print() const
     {
         cout << "Name: " << name << " model Year: " << modelYear << endl;
@@ -38,7 +36,7 @@ public:
     }
 // FIX: moved assign method to protected to mirror suv structure
 protected:
-void assign(const car &c)
+    void assign(const car &c)
     {
         name = c.name;
         modelYear = c.modelYear;
@@ -52,37 +50,38 @@ private:
     int mileage;
 
 public:
-    int get_mpg() const {return mileage;};
     sedan(const string &n, const int my, const int m) : car(n, my), mileage(m) {}
 
-    virtual void print() const
+    int get_mileage() const { return mileage; }
+
+    void print() const
     {
-        cout << "Name: " << get_name() << " model Year: " << get_year() << " Mileage: " << get_mpg() << endl; // FIX: use getters to print
+        cout << "Name: " << get_name() << " model Year: " << get_year() << " Mileage: " << get_mileage() << endl;
     }
 };
 
 class suv : public car
 {
-// FIX: miles is private and uses a getter
 private:
+// FIX: miles is private and uses a getter
     int miles;
-   
 
 public:
-   
-    int get_mpg() const {return miles;};
     suv(const string &n, const int my, const int m) : car(n, my), miles(m) {} // FIX: Creates car object
 
-    virtual void print() const
+    int get_miles() const { return miles; }
+
+    void print() const
     {
-        cout << "Name: " << get_name() << " model Year: " << get_year() << " Mileage: " << get_mpg() << endl; // FIX: use getters to print
+        // FIX: use getters to print
+        cout << "Name: " << get_name() << " model Year: " << get_year() << " Miles driven: " << get_miles() << endl;
     }
 
-    virtual const suv &operator=(const car c)
+    const suv &operator=(const car &c) // Changed parameter type to car from car c
     {
         if (const suv *b = dynamic_cast<const suv *>(&c))
         {
-            suv::assign(*b); // FIX: calls assign properly
+            assign(*b); // FIX: calls assign properly
         }
         return *this;
     }
@@ -108,15 +107,15 @@ int main()
 
     printCarInfo(tesla);
     printCarInfo(hyundai);
-
+    // fix: correctly change references to two fords
     car &ref = ford;
     printCarInfo(ref);
     suv ford2 = suv("Ford", 2017, 10000);
     ref = ford2;
     printCarInfo(ref);
+
     return 0;
 }
-
 
 /*
 ALL FIXES :
@@ -124,4 +123,5 @@ ALL FIXES :
 - used getters for all private methods
 - made miles/mileage private
 - deref given car argument to ensure overriden print() runs
+- made sure references to both ford cars were correct when printing
 */
