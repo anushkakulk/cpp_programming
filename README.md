@@ -1,5 +1,5 @@
 # Summer-2023
-This is course repo for Programming in C++ - Summer 2023 @ Northeastern University!
+Programming in C++
 
 Concepts covered:
 - basic data structures and inheritance
